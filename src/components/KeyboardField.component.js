@@ -32,13 +32,13 @@ class KeyboardField extends Component {
     console.log("Input changed", newValue);
   };
 
-  onKeyPress = (button) => {
-    console.log("Button pressed", button);
-
+  onKeyPress = (key) => {
+    console.log("Button pressed", key);
     /**
      * If you want to handle the shift and caps lock buttons
      */
-    if (button === "{shift}" || button === "{lock}") this.handleShift();
+    if (key === "{shift}" || key === "{lock}") this.handleShift();
+    socket.keyboardSend({key: key});
   };
 
   handleShift = () => {
