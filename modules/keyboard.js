@@ -1,5 +1,3 @@
-// const KeyboardController = require('simple-keyboard')
-// const sendkeys = require('sendkeys');
 const ks = require("node-key-sender");
 
 class Keyboard {
