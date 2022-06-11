@@ -2,7 +2,7 @@
 
 ## About
 
-A web app that allows you to control your computer (mouse and keyboard) directly from your phone!
+A web app that allows you to control your Windows computer (mouse and keyboard) directly from your phone!
 
 ## How it works
 
@@ -39,5 +39,4 @@ WARNING: Keep these urls private, as anyone else on the same wifi network can us
 
 ### Issues
 
-- Has only been tested on a Windows machine. MacOS and Linux systems may require different configurations to work
 - Some special characters like `@` or `%` do not always show up when using the virtual keyboard
