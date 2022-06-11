@@ -1,27 +1,43 @@
-# Phone Controller
+# Remote Control Desktop
 
-## What is it
+## About
 
-A React web app that allows you to control your computer (mouse and keyboard) from your phone
+A web app that allows you to control your computer (mouse and keyboard) directly from your phone!
 
 ## How it works
 
-The app uses sockets to establish a real time connection from your phone/client to the server running on your computer. Dragging you finger accross the screen moves the mouse, and bring down the keyboard on the app lets you type on your computer as well.
+The app uses sockets to establish a real time connection from your phone/client to the server running on your computer. Dragging one finger accross the screen moves the mouse, and using two lets you scroll (just like a touchpad). Toggle the keyboard button at the top of the app to type on your computer.
 
-## Installation
+## Installation & Set Up
 
-To install it's dependencies:
+1) git clone this repo or download the zipped folder and unpack
+2) open terminal at the root directory of the project and run:
+    ```
+    npm install
+    ```
+    to install all the packages necessary to run the project
+3) to start the app, run:
+    ```
+    npm start
+    ```
+    A url will show on console; put this url into your mobile browser and you can now control your PC from your phone. 
 
-$npm install
+4) to stop the server and web app, simply hit `Ctrl+C` in the console that is 
+    running the program.
+    
+NOTE: Your phone MUST be connected to the same wifi network as your computer
 
-Then to start the app:
+WARNING: Keep these urls private, as anyone else on the same wifi network can use them to control your computer while the server is running!!!
 
-$npm start
+## Future Features & Known Issues
 
-A url will show on console -- put this url into your mobile browser and you can
-now control your PC from here.
-
-## Future Features
+### Features
 
 - Add volume control buttons on the UI
-- Add programmable "shortcut" buttons that do a specific task (like open Netflix)
+- Upgrade virtual keyboard used to include other keyboard types
+- Add programmable "shortcut" buttons that perform specific tasks (like open Netflix)
+
+### Issues
+
+- Has only been tested on a Windows machine. MacOS and Linux systems may require different configurations to work
+- Some special characters like `@` or `%` do not always show up when using the virtual keyboard
