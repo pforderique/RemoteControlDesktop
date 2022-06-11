@@ -3,6 +3,7 @@
 var app = require('./app');
 var http = require('http');
 var os = require('os');
+var logger = require('./utils/logger');
 var Robot = require('./modules/robot');
 var robot = new Robot();
 
@@ -21,7 +22,7 @@ var io = require('socket.io')(server);
 
 io.on('connection', (socket) => {
   handleSocketEvents(socket, robot);
-  console.log('someon connected');
+  logger('Socket Connected.');
 });
 
 const ifaces = os.networkInterfaces();
