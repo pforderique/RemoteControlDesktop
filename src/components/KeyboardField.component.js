@@ -10,35 +10,16 @@ class KeyboardField extends Component {
       layoutName: "default",
       keyShown: "",
     };
-
-    // const keyboard = new Keyboard({
-    //     onKeyPress: key => this.handleKeyDown({key: key})
-    // })
   }
-  // onChange = event => {
-  //     const currentValue = event.target.value;
-  //     const newValue = currentValue.charAt(currentValue.length - 1);
-  //     this.setState({keyShown: newValue});
-  //     console.log('onChange', event.target);
-  // }
-  // handleKeyDown  = event => {
-  //     const newKey = event.key;
-  //     socket.keyboardSend({key: newKey});
-  // }
+
   onChange = (input) => {
     const newValue = input.charAt(input.length - 1);
-    // this.setState({keyShown: newValue});
     this.setState({ input: newValue });
-    console.log("Input changed", newValue);
   };
 
   onKeyPress = (key) => {
-    console.log("Button pressed", key);
-    /**
-     * If you want to handle the shift and caps lock buttons
-     */
     if (key === "{shift}" || key === "{lock}") this.handleShift();
-    socket.keyboardSend({key: key});
+    socket.keyboardSend({ key: key });
   };
 
   handleShift = () => {
@@ -54,10 +35,12 @@ class KeyboardField extends Component {
     this.setState({ input });
     this.keyboard.setInput(input);
   };
+
   render() {
     return (
-      <div>
+      <>
         <input
+          className="KeyboardField-input"
           value={this.state.input}
           placeholder={"Tap on the virtual keyboard to type"}
           onChange={this.onChangeInput}
@@ -68,11 +51,7 @@ class KeyboardField extends Component {
           onChange={this.onChange}
           onKeyPress={this.onKeyPress}
         />
-        {/* <label color='white'>
-                Keyboard:
-                <input type="text" value={this.state.keyShown} onChange={this.onChange} onKeyDown={this.handleKeyDown} />
-            </label> */}
-      </div>
+      </>
     );
   }
 }
