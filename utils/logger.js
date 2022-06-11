@@ -1,5 +1,5 @@
 function logger(...args) {
-    console.log('[PhoneController]', ...args);
+    console.log('[RemoteControlDesktop]', ...args);
 } 
 
 module.exports = logger;
