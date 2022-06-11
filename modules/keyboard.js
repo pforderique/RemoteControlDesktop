@@ -16,7 +16,7 @@ class Keyboard {
     // convert key from react-simple-keyboard into keyCode that
     // node-key-sender recognizes
     key =
-      key === "{bksp}" ? "back_space" : key.toLowerCase().replace(/[{}]/g, "");
+      key === "{bksp}" ? "back_space" : key.replace(/[{}]/g, "");
 
     return ks.sendCombination([key]).then(console.log("KeyCode", [key]));
   }
