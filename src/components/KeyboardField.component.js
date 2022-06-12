@@ -13,8 +13,9 @@ class KeyboardField extends Component {
   }
 
   onChange = (input) => {
-    const newValue = input.charAt(input.length - 1);
-    this.setState({ input: newValue });
+    const maxLineLength = 20;
+    input = input.slice(input.length - maxLineLength);
+    this.setState({ input });
   };
 
   onKeyPress = (key) => {
