@@ -8,12 +8,11 @@ class KeyboardField extends Component {
     super(props);
     this.state = {
       layoutName: "default",
-      keyShown: "",
     };
   }
 
   onChange = (input) => {
-    const maxLineLength = 20;
+    const maxLineLength = 28;
     input = input.slice(input.length - maxLineLength);
     this.setState({ input });
   };
