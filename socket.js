@@ -16,13 +16,13 @@ function handleSocketEvents(socket, robot) {
   });
 
   socket.on(constants.MOUSE_CLICK, ({ button, double }) => {
-    logger("mouse clicked", button);
     robot.mouse.click(button, double);
+    logger("mouse clicked", button);
   });
 
   socket.on(constants.KEYBOARD_SEND, ({ key }) => {
-    logger("key sent", key);
     robot.keyboard.sendKey(key);
+    logger("key sent", key);
   });
 }
 
